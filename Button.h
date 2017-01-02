@@ -37,6 +37,7 @@ class Button
         uint8_t _changed;       //state changed since last read
         uint32_t _time;         //time of current state (all times are in ms)
         uint32_t _lastChange;   //time of last state change
+        uint32_t _lastButOneChange;   //time of state before last change
         uint32_t _dbTime;       //debounce time
 };
 #endif
