@@ -127,11 +127,11 @@ uint8_t Button::releasedFor(uint32_t ms)
 }
 
 /*----------------------------------------------------------------------*
- * wasRelasedGap() check for gap shorter than ms,                       *
+ * wasReleasedGap() check for gap shorter than ms,                       *
  * ms in milliseconds.                                                  *
  * These functions do not cause the button to be read.                  *
  *----------------------------------------------------------------------*/
-uint8_t Button::wasRelasedGap(uint32_t ms)
+uint8_t Button::wasReleasedGap(uint32_t ms)
 {
     return (wasPressed() && _lastChange - _lastButOneChange <= ms) ? 1 : 0;
 }
