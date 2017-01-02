@@ -26,6 +26,7 @@ class Button
         uint8_t wasReleased();
         uint8_t pressedFor(uint32_t ms);
         uint8_t releasedFor(uint32_t ms);
+        uint8_t wasReleasedGap(uint32_t ms);
         uint32_t lastChange();
     
     private:
