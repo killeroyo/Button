@@ -68,6 +68,7 @@ uint8_t Button::read(void)
         _state = pinVal;
         _time = ms;
         if (_state != _lastState)   {
+            _lastButOneChange = _lastChange;
             _lastChange = ms;
             _changed = 1;
         }
