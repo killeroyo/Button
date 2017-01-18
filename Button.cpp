@@ -68,9 +68,18 @@ uint8_t Button::read(void)
         _state = pinVal;
         _time = ms;
         if (_state != _lastState)   {
-            _lastButOneChange = _lastChange;
-            _lastChange = ms;
-            _changed = 1;
+            delay(10);
+            pinVal = digitalRead(_pin); //second check to confirm
+            if (pinVal == _state) {
+                _lastButOneChange = _lastChange;
+                _lastChange = ms;
+                _changed = 1;
+            }
+            else { 
+                _state = pinVal;
+                _changed = 0;
+                //Serial.println(F("Noise detected!"));
+            }
         }
         else {
             _changed = 0;
