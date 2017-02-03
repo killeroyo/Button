@@ -78,7 +78,8 @@ uint8_t Button::read(void)
             else { 
                 _state = pinVal;
                 _changed = 0;
-                //Serial.println(F("Noise detected!"));
+                //Serial.println(F("Noise detected! Pin: "));
+                //Serial.println(_pin);
             }
         }
         else {
