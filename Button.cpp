@@ -70,6 +70,7 @@ uint8_t Button::read(void)
         if (_state != _lastState)   {
             delay(10);
             pinVal = digitalRead(_pin); //second check to confirm
+            if (_invert != 0) pinVal = !pinVal;
             if (pinVal == _state) {
                 _lastButOneChange = _lastChange;
                 _lastChange = ms;
